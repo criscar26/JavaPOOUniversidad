@@ -5,10 +5,63 @@
  */
 package bo.usfx.sis457.entidades;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Marcelo
  */
-public class Administrativo {
+public class Administrativo  extends Persona{
+    protected String Cargo;
+    protected String LugarTrabajo;
+    protected Calendar FechaIngreso; 
+
+    public Administrativo(String Cargo, String LugarTrabajo, Calendar FechaIngreso, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
+        super(carnetIdentidad, nombre, fechaNacimiento);
+        this.Cargo = Cargo;
+        this.LugarTrabajo = LugarTrabajo;
+        this.FechaIngreso = FechaIngreso;
+    }
+
+    public Administrativo(String Cargo, String LugarTrabajo, Calendar FechaIngreso) {
+        super();
+        this.Cargo = Cargo;
+        this.LugarTrabajo = LugarTrabajo;
+        this.FechaIngreso = FechaIngreso;
+    }
+
+    public String getCargo() {
+        return Cargo;
+    }
+
+    public String getLugarTrabajo() {
+        return LugarTrabajo;
+    }
+
+    public Calendar getFechaIngreso() {
+        return FechaIngreso;
+    }
+
+    public void setCargo(String Cargo) {
+        this.Cargo = Cargo;
+    }
+
+    public void setLugarTrabajo(String LugarTrabajo) {
+        this.LugarTrabajo = LugarTrabajo;
+    }
+
+    public void setFechaIngreso(Calendar FechaIngreso) {
+        this.FechaIngreso = FechaIngreso;
+    }
+
+    @Override
+    public String toString() {
+        return "Administrativo{" + "Cargo=" + Cargo + ", LugarTrabajo=" + LugarTrabajo + ", FechaIngreso=" + FechaIngreso + '}';
+    }
+ 
+    
+    
+    
+    
     
 }

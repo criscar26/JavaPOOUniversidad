@@ -13,34 +13,42 @@ import java.util.Calendar;
  * @author Marcelo
  */
 public class Profesor extends Persona {
-    protected String Contrato;
+    protected int anioexp;
+    protected String Asignaturas[];
     protected String Titulo;
- 
-    public Profesor(String contrato, String titulo, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
+
+    public Profesor(int anioexp, String[] Asignaturas, String Titulo, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
         super(carnetIdentidad, nombre, fechaNacimiento);
-        this.Contrato = contrato;
-        this.Titulo = titulo;
+        this.anioexp = anioexp;
+        this.Asignaturas = Asignaturas;
+        this.Titulo = Titulo;
     }
 
-    public Profesor(String contrato, String titulo) {
-        this.Contrato = contrato;
-        this.Titulo = titulo;
+    public Profesor(int anioexp, String[] Asignaturas, String Titulo) {
+        super();
+        this.anioexp = anioexp;
+        this.Asignaturas = Asignaturas;
+        this.Titulo = Titulo;
     }
 
-    public Profesor() {
-        
+    public int getAnioexp() {
+        return anioexp;
     }
 
-    public String getContrato() {
-        return Contrato;
-    }
-
-    public void setContrato(String Contrato) {
-        this.Contrato = Contrato;
+    public String[] getAsignaturas() {
+        return Asignaturas;
     }
 
     public String getTitulo() {
         return Titulo;
+    }
+
+    public void setAnioexp(int anioexp) {
+        this.anioexp = anioexp;
+    }
+
+    public void setAsignaturas(String[] Asignaturas) {
+        this.Asignaturas = Asignaturas;
     }
 
     public void setTitulo(String Titulo) {
@@ -49,12 +57,15 @@ public class Profesor extends Persona {
 
     @Override
     public String toString() {
-        return "Profesor{" 
-                + "Id=" + this.Id 
-                + ", CarnetIdentidad=" + this.CarnetIdentidad 
-                + ", Nombre=" + this.Nombre 
-                + ", FechaNacimiento=" + Utilitarios.getFechaCalendario(this.FechaNacimiento)
-                + ", Contrato=" + Contrato + ", Titulo=" + Titulo + '}';
+        String Asig="";
+        for (String Asignatura : Asignaturas) {
+            Asig = Asig + Asignatura + ", ";
+        }
+        return "Profesor{" + "anioexp=" + anioexp + 
+                ", Asignaturas=" + Asig + 
+                ", Titulo=" + Titulo + '}';
     }
+ 
+
     
 }

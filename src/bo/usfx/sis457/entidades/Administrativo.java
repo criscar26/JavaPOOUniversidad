@@ -5,6 +5,7 @@
  */
 package bo.usfx.sis457.entidades;
 
+import bo.usfx.sis457.Utilitarios;
 import java.util.Calendar;
 
 /**
@@ -56,7 +57,14 @@ public class Administrativo  extends Persona{
 
     @Override
     public String toString() {
-        return "Administrativo{" + "Cargo=" + Cargo + ", LugarTrabajo=" + LugarTrabajo + ", FechaIngreso=" + FechaIngreso + '}';
+        return "Administrativo{" 
+                + "Id=" + this.Id 
+                + ", CarnetIdentidad=" + this.CarnetIdentidad 
+                + ", Nombre=" + this.Nombre 
+                + ", FechaNacimiento=" + Utilitarios.getFechaCalendario(this.FechaNacimiento)
+                + ", Cargo=" + this.Cargo 
+                + ", LugarTrabajo=" + this.LugarTrabajo 
+                + ", FechaIngreso=" + this.FechaIngreso + '}';
     }
  
     

@@ -12,19 +12,19 @@ import java.util.Calendar;
  *
  * @author Marcelo
  */
-public class Profesor extends Persona {
+public class Docente extends Persona {
     protected int anioexp;
     protected String Asignaturas[];
     protected String Titulo;
 
-    public Profesor(int anioexp, String[] Asignaturas, String Titulo, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
+    public Docente(int anioexp, String[] Asignaturas, String Titulo, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
         super(carnetIdentidad, nombre, fechaNacimiento);
         this.anioexp = anioexp;
         this.Asignaturas = Asignaturas;
         this.Titulo = Titulo;
     }
 
-    public Profesor(int anioexp, String[] Asignaturas, String Titulo) {
+    public Docente(int anioexp, String[] Asignaturas, String Titulo) {
         super();
         this.anioexp = anioexp;
         this.Asignaturas = Asignaturas;
@@ -58,12 +58,17 @@ public class Profesor extends Persona {
     @Override
     public String toString() {
         String Asig="";
-        for (String Asignatura : Asignaturas) {
+        for (String Asignatura : this.Asignaturas) {
             Asig = Asig + Asignatura + ", ";
         }
-        return "Profesor{" + "anioexp=" + anioexp + 
-                ", Asignaturas=" + Asig + 
-                ", Titulo=" + Titulo + '}';
+        return "Profesor{" 
+                + "Id=" + this.Id 
+                + ", CarnetIdentidad=" + this.CarnetIdentidad 
+                + ", Nombre=" + this.Nombre 
+                + ", FechaNacimiento=" + Utilitarios.getFechaCalendario(this.FechaNacimiento)
+                + ", Años de experiencia=" + this.anioexp 
+                + ", Asignaturas=" + Asig 
+                + ", Titulo=" + this.Titulo + '}';
     }
  
 

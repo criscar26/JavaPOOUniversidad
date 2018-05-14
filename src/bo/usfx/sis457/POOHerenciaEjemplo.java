@@ -48,7 +48,7 @@ public class POOHerenciaEjemplo {
         System.out.println("| - Ejemplo de Herencia                            |");
         System.out.println("+==================================================+");
         System.out.println("| 1) Gestión de Personas                           |");
-        System.out.println("| 2) Gestión de Profesores                         |");
+        System.out.println("| 2) Gestión de Docentes                           |");
         System.out.println("| 3) Gestión de Alumnos                            |");
         System.out.println("| 4) Gestión de Administrativos                    |");
         System.out.println("| 0) Salir                                         |");
